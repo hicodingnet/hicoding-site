@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>可期日历 HiCal - 海码网 | 广州海码智能科技有限公司</title>
+<meta name="description" content="可期日历 HiCal：农历节气日历与重要日子提醒应用。记录重要日子，适时提醒，让每个值得纪念的日子都被温柔以待。广州海码智能科技有限公司出品。">
+<style>
+  :root {
+    --primary: #6366f1; --primary-light: #818cf8; --primary-dark: #4f46e5;
+    --primary-soft: #eef2ff;
+    --text-main: #1e293b; --text-sub: #64748b; --text-hint: #94a3b8;
+    --border-soft: #e2e8f0; --surface-soft: #f8fafc;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", "Microsoft YaHei", sans-serif;
+    color: var(--text-main); background: #fff; line-height: 1.6;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* 顶部 */
+  header { border-bottom: 1px solid var(--border-soft); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; }
+  .brand .logo {
+    width: 32px; height: 32px; border-radius: 9px; color: #fff;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    display: flex; align-items: center; justify-content: center; font-size: 17px;
+  }
+  .brand small { font-size: 12px; font-weight: 500; color: var(--text-hint); }
+
+  /* Hero */
+  .hero {
+    text-align: center; padding: 88px 0 72px;
+    background: linear-gradient(180deg, var(--primary-soft) 0%, #ffffff 100%);
+  }
+  .hero h1 { font-size: 40px; letter-spacing: 1px; }
+  .hero h1 em { font-style: normal; color: var(--primary); }
+  .hero p.lead { margin: 18px auto 0; max-width: 560px; font-size: 17px; color: var(--text-sub); }
+  .badges { margin-top: 30px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .badge {
+    padding: 10px 22px; border-radius: 12px; font-size: 14px; font-weight: 600;
+    background: #fff; color: var(--text-sub); border: 1px solid var(--border-soft);
+  }
+  .badge.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+  .hero .en { margin-top: 26px; font-size: 13px; color: var(--text-hint); }
+
+  /* 特性 */
+  .features { padding: 64px 0 8px; }
+  .features h2 { text-align: center; font-size: 26px; }
+  .features .sub { text-align: center; color: var(--text-hint); margin-top: 8px; font-size: 14px; }
+  .grid { margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
+  .card {
+    border: 1px solid var(--border-soft); border-radius: 16px; padding: 26px 22px;
+    background: #fff; box-shadow: 0 4px 16px rgba(30, 41, 59, 0.04);
+  }
+  .card .icon {
+    width: 44px; height: 44px; border-radius: 12px; font-size: 22px;
+    background: var(--primary-soft); display: flex; align-items: center; justify-content: center;
+  }
+  .card h3 { margin-top: 14px; font-size: 16px; }
+  .card p { margin-top: 8px; font-size: 14px; color: var(--text-sub); }
+
+  /* 关于 */
+  .about { padding: 64px 0; }
+  .about .box {
+    border-radius: 20px; padding: 40px 36px; text-align: center;
+    background: linear-gradient(135deg, var(--primary-soft) 0%, #fdf2f8 100%);
+  }
+  .about h2 { font-size: 22px; }
+  .about .company { margin-top: 14px; font-size: 17px; font-weight: 700; }
+  .about .company-en { margin-top: 4px; font-size: 13px; color: var(--text-sub); letter-spacing: 0.3px; }
+  .about p { margin-top: 10px; color: var(--text-sub); font-size: 14px; }
+  .about .slogan { margin-top: 6px; font-size: 13px; color: var(--text-hint); letter-spacing: 2px; }
+
+  footer { border-top: 1px solid var(--border-soft); padding: 30px 0 40px; }
+  footer .wrap { text-align: center; font-size: 13px; color: var(--text-hint); }
+  footer a { color: var(--text-sub); text-decoration: none; }
+  @media (max-width: 560px) { .hero h1 { font-size: 30px; } .hero { padding: 64px 0 52px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="logo">海</span>海码网 <small>HiCoding.net</small></div>
+    <div style="font-size:14px;color:var(--text-sub);">可期日历 HiCal</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>可期日历 <em>HiCal</em></h1>
+    <p class="lead">农历节气与传统节日、重要日子多级提醒、时光记忆——别再错过任何值得纪念的日子。</p>
+    <div class="badges">
+      <span class="badge primary">即将上线 App Store</span>
+      <span class="badge">即将上线主流安卓应用市场</span>
+    </div>
+    <p class="en">HiCal — a lunar calendar &amp; important-days app. Never miss a moment that matters.</p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <h2>核心功能</h2>
+    <p class="sub">Phase 1 · 持续迭代中</p>
+    <div class="grid">
+      <div class="card"><div class="icon">🏮</div><h3>农历与节气</h3><p>公农历双视角、二十四节气、法定节假日与调休，一眼可读。</p></div>
+      <div class="card"><div class="icon">💝</div><h3>重要日子提醒</h3><p>生日、纪念日、节日多级提前提醒，循环规则全面覆盖，适时温习。</p></div>
+      <div class="card"><div class="icon">🕰️</div><h3>时光记忆</h3><p>在重要的日子里记录美好瞬间，岁月流转，回忆有处可寻。</p></div>
+      <div class="card"><div class="icon">📱</div><h3>桌面小组件</h3><p>月视图与倒计时桌面组件，重要的日子常驻眼前。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="box">
+      <h2>关于我们</h2>
+      <div class="company">广州海码智能科技有限公司</div>
+      <div class="company-en">Guangzhou Haima Intelligent Technology Co., Ltd</div>
+      <p>聚焦个人时间管理与情感记录工具，做值得信赖的日历产品。</p>
+      <div class="slogan">海纳万象 · 匠心编码</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 广州海码智能科技有限公司 · <a href="https://hicoding.net">HiCoding.net 海码网</a></p>
+    <p style="margin-top:6px;">admin@hicoding.net</p>
+    <!-- 备案号下来后在此处补挂：粤ICP备XXXXXXXX号（切回境内服务器时必须展示） -->
+  </div>
+</footer>
+
+</body>
+</html>
