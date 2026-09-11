@@ -1,8 +1,10 @@
 # hicoding.net 官网部署（GitHub Pages 临时托管 → 备案后回迁腾讯云）
 
 > 2026-09-01 建。目的：苹果组织账号注册需要「公开可访问 + 与组织关联」的官网，
-> ICP 备案号要 ~10 月中才下来，先用 GitHub Pages 境外托管顶上（境外托管无需备案，合规）。
+> ICP 备案号下来前先用 GitHub Pages 境外托管顶上（境外托管无需备案，合规）。
 > 本目录 = 官网仓库全部内容（index.html + CNAME）。
+> **9/8 状态更新**：组织账号已到手（9/3），GitHub Pages 上线流程（§一/§二）已成历史；
+> 当前等待=ICP/App 备案出号（预期 9 月中下旬，≤9/22 硬闸门）→ 出号日按 §三 回迁+挂号。
 
 ## ⚠️ 上线前必核对（苹果审核视角）
 
@@ -47,6 +49,6 @@ GitHub 仓库 → Settings → Pages：
 
 ## 时序
 
-- DUNS 查询节奏：9/8、9/10 各查一次（developer.apple.com → DUNS lookup）
-- **查到即注册组织账号（¥688，支付宝）**，官网保持在线直到注册审核通过
-- 组织账号下来 → iOS 上架条件齐备（还差 App 备案号）
+- ~~DUNS 查询 / 组织账号注册~~ ✅ 全部完成（DUNS 8/31 出码，组织账号 9/3 到手）
+- **当前节点**：备案管局审核中（≤9/22）→ 出号日动作见 §三 + M2「出号日四连」
+- ✅ **出号日官网三连已完成（9/11）**：① footer 挂「粤ICP备2026135341号」（链工信部）② 轻量（193.112.210.120，OpenCloudOS 9.6）装 nginx（dnf 需 `--disableexcludes=all`）+ 三页面上传 ③ DNS 已切（A @ / CNAME www）。**9/11 加 https**：certbot+Let's Encrypt（HTTP-01）签发 hicoding.net+www，nginx 443 配置 `/etc/nginx/conf.d/hicoding.conf`（80→301→https），`certbot-renew.timer` 已启用（90 天自动续）。**四连前置全部就绪**

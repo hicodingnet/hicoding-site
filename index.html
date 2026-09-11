@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>可期日历 HiCal - 海码网 | 广州海码智能科技有限公司</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 <meta name="description" content="可期日历 HiCal：农历节气日历与重要日子提醒应用。记录重要日子，适时提醒，让每个值得纪念的日子都被温柔以待。广州海码智能科技有限公司出品。">
 <style>
   :root {
@@ -24,9 +28,7 @@
   .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; }
   .brand .logo {
-    width: 32px; height: 32px; border-radius: 9px; color: #fff;
-    background: linear-gradient(135deg, var(--primary-light), var(--primary));
-    display: flex; align-items: center; justify-content: center; font-size: 17px;
+    width: 32px; height: 32px; border-radius: 9px; object-fit: cover; display: block;
   }
   .brand small { font-size: 12px; font-weight: 500; color: var(--text-hint); }
 
@@ -84,7 +86,7 @@
 
 <header>
   <div class="wrap nav">
-    <div class="brand"><span class="logo">海</span>海码网 <small>HiCoding.net</small></div>
+    <div class="brand"><img class="logo" src="assets/logo-mark.png" alt="海码智能">海码网 <small>HiCoding.net</small></div>
     <div style="font-size:14px;color:var(--text-sub);">可期日历 HiCal</div>
   </div>
 </header>
@@ -128,9 +130,9 @@
 
 <footer>
   <div class="wrap">
-    <p>© 2026 广州海码智能科技有限公司 · <a href="https://hicoding.net">HiCoding.net 海码网</a></p>
+    <p><img src="assets/logo-mark.png" alt="" style="width:26px;height:26px;border-radius:7px;vertical-align:middle;margin-right:8px;">© 2026 广州海码智能科技有限公司 · <a href="https://hicoding.net">HiCoding.net 海码网</a></p>
     <p style="margin-top:6px;"><a href="privacy.html">隐私政策</a> · <a href="user-agreement.html">用户协议</a> · admin@hicoding.net</p>
-    <!-- 备案号下来后在此处补挂：粤ICP备XXXXXXXX号（切回境内服务器时必须展示） -->
+    <p style="margin-top:6px;"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2026135341号-1</a></p>
   </div>
 </footer>
 
