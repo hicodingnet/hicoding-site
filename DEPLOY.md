@@ -52,3 +52,11 @@ GitHub 仓库 → Settings → Pages：
 - ~~DUNS 查询 / 组织账号注册~~ ✅ 全部完成（DUNS 8/31 出码，组织账号 9/3 到手）
 - **当前节点**：备案管局审核中（≤9/22）→ 出号日动作见 §三 + M2「出号日四连」
 - ✅ **出号日官网三连已完成（9/11）**：① footer 挂「粤ICP备2026135341号」（链工信部）② 轻量（193.112.210.120，OpenCloudOS 9.6）装 nginx（dnf 需 `--disableexcludes=all`）+ 三页面上传 ③ DNS 已切（A @ / CNAME www）。**9/11 加 https**：certbot+Let's Encrypt（HTTP-01）签发 hicoding.net+www，nginx 443 配置 `/etc/nginx/conf.d/hicoding.conf`（80→301→https），`certbot-renew.timer` 已启用（90 天自动续）。**四连前置全部就绪**
+- ✅ **公安联网备案网站(-1)过审（9/12 17:41:39 生效）：粤公网安备44011102485268号** → 9/14 三页页脚回挂（查询链 `beian.mps.gov.cn/#/query/webSearch?code=…` + 官方徽标 `assets/ghs.png` 自托管）并部署外网验证。**APP(-2A) 仍在审核**，出号后补挂 App 内备案展示行
+
+## 五、多 App Universal Links 规范（9/11 定调）
+
+AASA（`/.well-known/apple-app-site-association`）的 `details` 为数组，按 App 追加条目：
+- 可期日历：appID `4Z3JZ7U43K.net.hicoding.hical`，路径 `/app/*`（已上线）
+- 新 App 上线时：追加 `{"appIDs": ["4Z3JZ7U43K.net.hicoding.<appkey>"], "components": [{"/": "/<appkey>/*"}]}`，路径前缀与 App 一一对应、禁止重叠
+- Bundle ID 规范 `net.hicoding.<appkey>`；自定义 Scheme 同理 `<appkey>://`
